@@ -1,1 +1,67 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Age Calculator — DevKit Tools</title><meta name="description" content="在线年龄计算器 - 精确到天/月/年的生日计算"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh}header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:18px;font-weight:700;color:#58a6ff}.logo span{color:#f0c040}main{max-width:700px;margin:32px auto;padding:0 24px;flex:1}footer{padding:16px 24px;border-top:1px solid #21262d;text-align:center;font-size:12px;color:#484f58}footer a{color:#58a6ff;text-decoration:none;margin:0 8px}.ta{width:100%;padding:16px;font-size:13px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6}.ta:focus{border-color:#58a6ff}.btn{padding:10px 24px;font-size:13px;font-weight:600;border:1px solid #30363d;border-radius:8px;cursor:pointer;background:#21262d;color:#c9d1d9}.btn:hover{background:#30363d}.btn-p{background:#238636;border-color:#238636;color:#fff}.btn-p:hover{background:#2ea043}.actions{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap;align-items:center}.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin:12px 0}</style></head><body><header><div class="logo">🛠 <span>Dev</span>Kit</div><div style="font-size:11px;color:#8b949e">🔒 Processed locally · 数据不Upload</div></header><main><h1 style="font-size:24px;margin-bottom:4px">Age Calculator</h1><p style="color:#8b949e;font-size:14px;margin-bottom:16px">在线年龄计算器 - 精确到天/月/年的生日计算</p><div class="tool-wrapper"><div class="actions"><input type="date" id="ac-birth" style="padding:12px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;font-size:14px;outline:none"></div><div class="card" id="ac-result" style="text-align:center;font-size:20px;min-height:80px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px"></div><script>document.getElementById('ac-birth').addEventListener('change',function(){const b=new Date(this.value);if(isNaN(b.getTime()))return;const n=new Date();let y=n.getFullYear()-b.getFullYear();let m=n.getMonth()-b.getMonth();let d=n.getDate()-b.getDate();if(d<0){m--;const prev=new Date(n.getFullYear(),n.getMonth(),0);d+=prev.getDate()}if(m<0){y--;m+=12}const totalDays=Math.floor((n-b)/86400000);const totalMonths=y*12+m;const totalWeeks=Math.floor(totalDays/7);document.getElementById('ac-result').innerHTML='<div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#58a6ff">'+y+'</span><br><span style="font-size:12px;color:#8b949e">年</span></div><div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#3fb950">'+m+'</span><br><span style="font-size:12px;color:#8b949e">月</span></div><div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#f0c040">'+d+'</span><br><span style="font-size:12px;color:#8b949e">天</span></div><div style="font-size:12px;color:#8b949e;width:100%">共 '+totalDays+' 天 / '+totalWeeks+' 周 / '+totalMonths+' 月</div>'});document.getElementById('ac-birth').value='1990-01-01';document.getElementById('ac-birth').dispatchEvent(new Event('change'))</script></div></main><footer><a href="https://github.com/479464887-rgb/age-calculator">GitHub</a><span>·</span><span>© 2026 DevKit</span></footer><script></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛠</text></svg>">
+<meta name="theme-color" content="#0d1117">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta property="og:title" content="Age Calculator — DevKit Tools">
+<meta property="og:description" content="在线年龄计算器 - 精确到天/月/年的生日计算">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://479464887-rgb.github.io/age-calculator/">
+<meta name="twitter:card" content="summary_large_image">
+<title>Age Calculator — DevKit Tools
+</title>
+<meta name="description" content="在线年龄计算器 - 精确到天/月/年的生日计算"><style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#c9d1d9;min-height:100vh}header{background:#161b22;border-bottom:1px solid #30363d;padding:16px 24px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:18px;font-weight:700;color:#58a6ff}.logo span{color:#f0c040}main{max-width:700px;margin:32px auto;padding:0 24px;flex:1}footer{padding:16px 24px;border-top:1px solid #21262d;text-align:center;font-size:12px;color:#484f58}footer a{color:#58a6ff;text-decoration:none;margin:0 8px}.ta{width:100%;padding:16px;font-size:13px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;resize:vertical;outline:none;font-family:mono;line-height:1.6}.ta:focus{border-color:#58a6ff}.btn{padding:10px 24px;font-size:13px;font-weight:600;border:1px solid #30363d;border-radius:8px;cursor:pointer;background:#21262d;color:#c9d1d9}.btn:hover{background:#30363d}.btn-p{background:#238636;border-color:#238636;color:#fff}.btn-p:hover{background:#2ea043}.actions{display:flex;gap:8px;margin:12px 0;flex-wrap:wrap;align-items:center}.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;margin:12px 0}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Age Calculator","description":"在线年龄计算器 - 精确到天/月/年的生日计算","url":"https://479464887-rgb.github.io/age-calculator/","applicationCategory":"DeveloperApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+</head>
+<body>
+<header>
+<div class="logo">🛠 <span>Dev</span>Kit
+</div>
+<div style="font-size:11px;color:#8b949e">🔒 Processed locally · 数据不Upload
+</div>
+</header>
+<main><h1 style="font-size:24px;margin-bottom:4px">Age Calculator
+</h1>
+<p style="color:#8b949e;font-size:14px;margin-bottom:16px">在线年龄计算器 - 精确到天/月/年的生日计算
+</p>
+<div class="tool-wrapper">
+<div class="actions">
+<input type="date" id="ac-birth" style="padding:12px;border:1px solid #30363d;border-radius:8px;background:#0d1117;color:#c9d1d9;font-size:14px;outline:none">
+</div>
+<div class="card" id="ac-result" style="text-align:center;font-size:20px;min-height:80px;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px">
+</div>
+<script>
+'use strict';
+document.getElementById('ac-birth').addEventListener('change',function(){const b=new Date(this.value);
+if(isNaN(b.getTime()))return;
+const n=new Date();
+let y=n.getFullYear()-b.getFullYear();
+let m=n.getMonth()-b.getMonth();
+let d=n.getDate()-b.getDate();
+if(d<0){m--;
+const prev=new Date(n.getFullYear(),n.getMonth(),0);d+=prev.getDate()}
+if(m<0){y--;m+=12}
+const totalDays=Math.floor((n-b)/86400000);
+const totalMonths=y*12+m;
+const totalWeeks=Math.floor(totalDays/7);
+document.getElementById('ac-result').innerHTML='<div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#58a6ff">'+y+'</span><br><span style="font-size:12px;color:#8b949e">年</span></div><div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#3fb950">'+m+'</span><br><span style="font-size:12px;color:#8b949e">月</span></div><div style="text-align:center"><span style="font-size:36px;font-weight:700;color:#f0c040">'+d+'</span><br><span style="font-size:12px;color:#8b949e">天</span></div><div style="font-size:12px;color:#8b949e;width:100%">共 '+totalDays+' 天 / '+totalWeeks+' 周 / '+totalMonths+' 月</div>'});
+document.getElementById('ac-birth').value='1990-01-01';
+document.getElementById('ac-birth').dispatchEvent(new Event('change'))
+</script>
+</div>
+</main>
+<footer>
+<a href="https://github.com/479464887-rgb/age-calculator">GitHub
+</a>
+<span>·</span><span>© 2026 DevKit</span>
+</footer>
+<script>
+'use strict';
+
+</script>
+</body>
+</html>
